@@ -1,16 +1,31 @@
 #include <iostream>
-#include <iomanip>
+
 using namespace std;
+
 int main()
 {
-    double mph = 6.5;
-    // PACE calculation
-    /* write your code */
+  const double price = 199.0;
+  int quantity;
+  double discount = 0.0;
+  double totalcost;
 
-    //express pace in minutes and seconds
-  /* write your code here */
+  cout << "Enter number of units purchased: ";
+  cin >> quantity;
 
-  //express your output in 1 decimal points
+  if (quantity >= 100)
+      discount = 0.50;
+  else if (quantity >= 50)
+      discount =0.40;
+  else if (quantity >= 20)
+      discount = 0.30;
+  else if (quantity >= 10)
+      discount = 0.20;
+  else 
+      discount = 0.0;
+  
+  totalcost = quantity * price * (1 - discount);
 
+  cout << "Total cost: $" << totalcost << endl;
 
+  return 0;
 }
